@@ -1,0 +1,37 @@
+Istruzioni: 
+Scaricare il file in formato fasta "test-esame.fasta" contenente una serie di sequenze di DNA associate ai correspettivi id. Rispondere alle domande seguenti lasciando nel file solo la risposta che si ritiene corretta tra le possibilita' indicate. Se si preferisce non rispondere ad una domanda non eliminare nessuna risposta. Indicare nel file nome, cognome e matricola. 
+
+Spedire il file al docente con soggetto "Svolgimento Esame Python Triennale". 
+
+Per ogni risposta corretta verranno assegnati 2 punti, per ogni risposta non corretta verra' tolto 1 punto, le risposte non date non cambiano il punteggio. 
+
+L'esame sara' considerato superato con un punteggio pari a 8. 
+
+E-mail docente: alessandro.farinelli@univr.it
+
+NOME: Mario A.
+COGNOME: Barbara
+MATRICOLA: VR387794
+
+----------------------------------------------------------------------------------
+
+Q1) calcolare il numero dei record nel file
+418
+
+Q2) calcolare la lunghezza della sequenza massima 
+10593
+
+Q3) calcolare la lista di id che hanno lunghezza minima (la lista dovrebbe contenere piu' id solo se le sequenze associate a tutti gli id hanno tutte la stessa lunghezza e quella lunghezza e' minima):
+['lcl|CP007136.1_cds_ECRM12581_0780_156', 'lcl|CP007136.1_cds_ECRM12581_0005_1']
+
+Q4) calcolare la lista di id che hanno lunghezza massima (la lista dovrebbe contenere piu' id solo se le sequenze associate a tutti gli id hanno tutte la stessa lunghezza e quella lunghezza e' massima):
+['lcl|CP007136.1_cds_ECRM12581_1720_344']
+
+Q5) Calcolare l'id associato all'ORF piu' lungo nel frame 1 
+['lcl|CP007136.1_cds_ECRM12581_0970_194']
+
+Q6) Considerare le lunghezze 10, 12, 14, calcolare per quali di queste lunghezze l'occorrenza del most frequent repeat e' massima: 
+10
+
+
+

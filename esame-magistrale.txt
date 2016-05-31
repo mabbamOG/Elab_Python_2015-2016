@@ -1,0 +1,59 @@
+Istruzioni: 
+Scaricare il file in formato fasta "test-esame.fasta" contenente una serie di sequenze di DNA associate ai correspettivi id. Rispondere alle domande seguenti lasciando nel file solo la risposta che si ritiene corretta tra le possibilita' indicate. Se si preferisce non rispondere ad una domanda non eliminare nessuna risposta. Indicare nel file nome, cognome e matricola. 
+
+Spedire il file al docente con soggetto "Svolgimento Esame Python Magistrale". 
+
+Per ogni risposta corretta verranno assegnati 2 punti, per ogni risposta non corretta verra' tolto 1 punto, le risposte non date non cambiano il punteggio. 
+
+L'esame sara' considerato superato con un punteggio pari a 12. 
+
+E-mail docente: alessandro.farinelli@univr.it
+
+NOME:
+COGNOME:
+MATRICOLA:
+
+----------------------------------------------------------------------------------
+
+Q1) calcolare il numero dei record nel file
+372
+418
+503
+
+Q2) calcolare la lunghezza della sequenza massima 
+12326
+10593
+10324
+
+Q3) calcolare la lista di id che hanno lunghezza minima (la lista dovrebbe contenere piu' id solo se le sequenze associate hanno tutte la stessa lunghezza e quella lunghezza e' minima):
+['lcl|CP007136.1_cds_ECRM12581_0780_156', 'lcl|CP007136.1_cds_ECRM12581_0005_1']
+['lcl|CP007136.1_cds_ECRM12581_0780_156']
+['lcl|CP007136.1_cds_ECRM12581_0460_92']
+
+Q4) calcolare la lista di id che hanno lunghezza massima (la lista dovrebbe contenere piu' id solo se le sequenze associate hanno tutte la stessa lunghezza e quella lunghezza e' massima):
+['lcl|CP007136.1_cds_ECRM12581_1720_344']
+['lcl|CP007136.1_cds_ECRM12581_0460_92']
+['lcl|CP007136.1_cds_ECRM12581_0455_91']
+
+Q5) Calcolare l'id associato all'ORF piu' lungo nel frame 1 
+['lcl|CP007136.1_cds_ECRM12581_0575_115']
+['lcl|CP007136.1_cds_ECRM12581_0970_194']
+['lcl|CP007136.1_cds_ECRM12581_0450_90']
+
+Q6) Considerare le lunghezze 10, 12, 14, calcolare per quali di queste lunghezze l'occorrenza del most frequent repeat e' massima: 
+10
+12
+14
+
+Q7) Calcolare la lunghezza dell'ORF piu' lungo su tutti i frame
+8953
+9882
+9923
+
+Q8) Considerare i repeats nel range [8,12] (8 e 12 inclusi), restituire il repeat che occorre piu' di frequente considerando tutte le lunghezze nel range
+ACCGCTAG
+GGCGCTGG
+GAAGCACTGG
+
+
+

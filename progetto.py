@@ -26,7 +26,7 @@ def get_length_map(records):
 dato un dizionario che associa gli id alla lunghezza della stringa, ritorna la lunghezza della stringa minima e la lunghezza della stringa massima
 """
 def get_min_max_length(len_map):
-    """codice da sviluppare"""
+    """codice da sviluppare""",1
     return min(len_map.values()),max(len_map.values())
 
 """
@@ -87,12 +87,23 @@ def longest_ORF(orf_map):
 data una lunghezza n ed una lista di sequenze di nucleotidi, restituisce un dizionario che associa tutte le sottostringhe ripetute di lunghezza n (i.e., sottostringhe che compaiono almeno una volta in almeno una sequenza) al loro numero di occorrenze in tutte le sequenze.
 """
 def get_all_repeats_aux(n,word): # returns dictionary for all n-length substrings in word
-    rep_list = [word.lower()[x:x+3] for x in range(len(word)-3+1)]
+    rep_list = [word.lower()[x:x+n] for x in range(len(word)-n+1)]
     return {x:rep_list.count(x) for x in set(rep_list)}
 
 def get_all_repeats(n,seq_list):
     dict_list = [get_all_repeats_aux(n,word) for word in seq_list]
     return {x:sum([d[x] for d in dict_list if x in d]) for x in set.union(*[set(d) for d in dict_list])}
+
+def get_all_repeats2(n,seq_list):
+    res={}
+    for k in seq_list:
+        k=k.upper()
+        for i in range(len(k)-n):
+            if( k[i:i+n] in list(res.keys())):
+                res[k[i:i+n]]=res[k[i:i+n]] + 1
+            else :
+                res[k[i:i+n]]=1
+    return res
 
 """
 dato un dizionario che associa sottostringhe al numero di occorrenze, ritorna la sottostringa con il numero massimo di occorrenze (ed il numero di occorrenze)
@@ -111,16 +122,37 @@ def filter_repeats(rep_map,occ):
 
 
 if __name__ == "__main__" :
-    filename = input("Scegliere file fasta:\n\ta) dna.simple.fasta\n\tb) dna.long.fasta\n")
+    filename = input("Scegliere file fasta:\n\ta) dna.simple.fasta\n\tb) dna.long.fasta\n\tc) test-esame.fasta\n")
     if (filename == 'a'):
         filename = 'dna.simple.fasta'
-    else:
+    elif (filename == 'b'):
         filename = 'dna.long.fasta'
+    else:
+        filename = 'test-esame.fasta'
 
     from fastautil import read_fasta
 
     import sys
 
+    records = read_fasta(filename)
+    print("numero record = %s " % get_num_records(records))
+    #print("lunghezza seq minima %s e massima %s " % (min_seq,max_seq))
+    len_map = get_length_map(records)
+    min_seq,max_seq = get_min_max_length(len_map)
+    n_min,n_max = get_min_max_num(len_map)
+    print("lunghezza seq minima %s e massima %s " % (min_seq,max_seq))
+    id_min,id_max =    get_min_max_length_id(len_map)
+    print("id seq con lunghezza minima %s e massima %s " % (id_min,id_max))
+    orf_map    = get_ORF_map(records,1)
+    id_lorf,lorf,length_lorf = longest_ORF(orf_map)
+    print("id sequenza ORF piu' lungo = %s, lunghezza ORF = %d" % (id_lorf,length_lorf))
+    for n in [10,12,14]:
+        rep_map = get_all_repeats(n,records.values())
+        m_f_rep,rep_n = most_frequent_repeat(rep_map)
+        print("sottostringa ripetuta piu' di frequente per %d nel dizionario = %s , numero di occorrenze = %d" % (n,m_f_rep,rep_n))
+
+    sys.exit()
+    #####################################################
     #test P1
     records = read_fasta(filename)
     print("Test numero record, a) 5 b) 28 ")
