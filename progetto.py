@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# :-)
 
 """
 Codice per l'esame
